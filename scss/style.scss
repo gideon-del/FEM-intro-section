@@ -362,6 +362,7 @@ li {
   .main {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 100%;
     &__img {
       grid-row: 1/2;
       // background-size: cover;
