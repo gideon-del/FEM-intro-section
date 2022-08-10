@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+/*
+=====================
+    Variables
+====================
+*/
+:root {
+  --c-mid-white: hsl(0, 0%, 98%);
+  --c-medium-grey: hsl(0, 0%, 41%);
+  --c-mid-black: hsl(0, 0%, 8%);
+  --fw-5: 500;
+  --fw-7: 700;
+  --f-18: 1.8rem;
+  --f-family: "Epilogue", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Epilogue", sans-serif;
+}
+
+/*
+---------------------
+-------Reset----------
+----------------------
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--c-medium-grey);
+}
+
+button,
+input,
+textarea {
+  border: none;
+  font-family: inherit;
+  display: inline-block;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+picture {
+  display: inline-block;
+  object-fit: cover;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+/*
+----------------------------
+-------Resusable code--------
+----------------------------
+*/
+.btn {
+  padding: 2rem 4rem;
+  text-align: center;
+  border: solid 2px var(--c-medium-grey);
+  border-radius: 14px;
+  font-size: var(--f-18);
+  cursor: pointer;
+  display: inline-block;
+}
+.btn:hover {
+  color: var(--c-mid-black);
+  border-color: var(--c-mid-black);
+}
+
+.btn-black {
+  background-color: var(--c-mid-black);
+  color: var(--c-mid-white);
+}
+.btn-black:hover {
+  background-color: var(--c-mid-white);
+  color: var(--c-medium-grey);
+}
+
+.btn-white {
+  background-color: white;
+}
+
+.margin-bottom-small {
+  margin-bottom: 2rem;
+}
+
+/*
+---------------------
+-------Header--------
+----------------------
+*/
+.header {
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+.header .nav {
+  margin-left: 2rem;
+  display: flex;
+}
+.header .nav__item {
+  padding: 1rem;
+  position: relative;
+}
+.header .nav__list {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  font-size: 1.7rem;
+  margin-left: 3rem;
+  cursor: pointer;
+}
+.header .nav__list:hover {
+  color: var(--c-mid-black);
+}
+.header .nav__list img {
+  width: 0.9rem;
+}
+.header .nav__dropdown {
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: 5.5rem;
+  transform: translateY(-200%);
+  opacity: 0;
+  z-index: 1000;
+  transition: opacity 0.1s, transform 0.2ms;
+  border-radius: 10px;
+  background-color: var(--c-mid-white);
+  box-shadow: 0.3rem 0.5rem 1rem 0.5rem rgba(62, 60, 60, 0.2);
+}
+.header .nav__dropdown.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.header .nav__dropdown--list {
+  margin-block: 1.3rem;
+  display: flex;
+  gap: 1rem;
+  font-size: var(--f-18);
+  align-items: center;
+  cursor: pointer;
+}
+.header .nav__dropdown--list img {
+  width: 1.5rem;
+}
+.header__login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+.header__login .login {
+  padding: 1rem 2rem;
+  font-size: var(--f-18);
+  cursor: pointer;
+}
+.header__login .register {
+  padding: 1rem 2.5rem;
+}
+.header__login .login:hover,
+.header__login .btn:hover {
+  color: var(--c-mid-black);
+}
+.header__login .register:hover {
+  border-color: var(--c-mid-black);
+}
+
+.first {
+  right: 0;
+}
+
+.second {
+  right: -2.8rem;
+}
+
+/*
+---------------------
+-------Main----------
+----------------------
+*/
+.main {
+  display: flex;
+  min-height: 80vh;
+  margin-block: auto;
+  max-width: 100%;
+  padding: 2rem 1rem;
+}
+.main__img {
+  flex: 0 1 50%;
+  background-image: url("../images/image-hero-desktop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  object-fit: cover;
+}
+.main__content {
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 5rem;
+  gap: 4rem;
+}
+.main__header {
+  font-weight: var(--fw-7);
+  font-size: 8rem;
+  color: var(--c-mid-black);
+  justify-self: flex-start;
+}
+.main__p {
+  font-size: var(--f-18);
+  font-weight: var(--fw-5);
+  line-height: 3rem;
+}
+.main__icon {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+  height: 10%;
+  align-items: flex-end;
+}
+
+/*# sourceMappingURL=style.css.map */
