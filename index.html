@@ -31,73 +31,83 @@
       <div class="header__logo">
         <img src="./images/logo.svg" alt="Snap" />
       </div>
-      <nav class="nav">
-        <ul class="nav__item">
-          <li class="nav__list">
-            Features
-            <img
-              src="./images/icon-arrow-down.svg"
-              alt="Down icon"
-              data-src="./images/icon-arrow-up.svg"
-            />
-          </li>
-          <ul class="nav__dropdown first">
-            <li class="nav__dropdown--list">
-              <img src="./images/icon-todo.svg" alt="Todo image" /> Todo List
+      <div class="header__toggle">
+        <img src="./images/icon-menu.svg" alt="Nav toggle" />
+      </div>
+      <div class="nav__container">
+        <div class="nav__close">
+          <img src="./images/icon-close-menu.svg" alt="Close button" />
+        </div>
+        <nav class="nav">
+          <ul class="nav__item">
+            <li class="nav__list">
+              Features
+              <img
+                src="./images/icon-arrow-down.svg"
+                alt="Down icon"
+                data-src="./images/icon-arrow-up.svg"
+              />
             </li>
-            <li class="nav__dropdown--list">
-              <img src="./images/icon-calendar.svg" alt="Calender image" />
-              Calender
-            </li>
-            <li class="nav__dropdown--list">
-              <img src="./images/icon-reminders.svg" alt="Reminder image" />
-              Remainders
-            </li>
-            <li class="nav__dropdown--list">
-              <img src="./images/icon-planning.svg" alt="Planning image" />
-              Planning
-            </li>
+            <ul class="nav__dropdown first">
+              <li class="nav__dropdown--list">
+                <img src="./images/icon-todo.svg" alt="Todo image" /> Todo List
+              </li>
+              <li class="nav__dropdown--list">
+                <img src="./images/icon-calendar.svg" alt="Calender image" />
+                Calender
+              </li>
+              <li class="nav__dropdown--list">
+                <img src="./images/icon-reminders.svg" alt="Reminder image" />
+                Remainders
+              </li>
+              <li class="nav__dropdown--list">
+                <img src="./images/icon-planning.svg" alt="Planning image" />
+                Planning
+              </li>
+            </ul>
           </ul>
-        </ul>
-        <ul class="nav__item">
-          <li class="nav__list">
-            Company
-            <img
-              src="./images/icon-arrow-down.svg"
-              alt="Down icon"
-              data-src="./images/icon-arrow-up.svg"
-            />
-          </li>
-          <ul class="nav__dropdown second">
-            <li class="nav__dropdown--list">History</li>
-            <li class="nav__dropdown--list">Our Team</li>
-            <li class="nav__dropdown--list">Blog</li>
+          <ul class="nav__item">
+            <li class="nav__list">
+              Company
+              <img
+                src="./images/icon-arrow-down.svg"
+                alt="Down icon"
+                data-src="./images/icon-arrow-up.svg"
+              />
+            </li>
+            <ul class="nav__dropdown second">
+              <li class="nav__dropdown--list">History</li>
+              <li class="nav__dropdown--list">Our Team</li>
+              <li class="nav__dropdown--list">Blog</li>
+            </ul>
           </ul>
-        </ul>
-        <ul class="nav__item">
-          <li class="nav__list first">Careers</li>
-        </ul>
-        <ul class="nav__item">
-          <li class="nav__list first">About</li>
-        </ul>
-      </nav>
-      <div class="header__login">
-        <a href="#" class="login">Login</a>
-        <a href="#" class="btn btn-white register">Register</a>
+          <ul class="nav__item">
+            <li class="nav__list first">Careers</li>
+          </ul>
+          <ul class="nav__item">
+            <li class="nav__list first">About</li>
+          </ul>
+        </nav>
+        <div class="header__login">
+          <a href="#" class="login">Login</a>
+          <a href="#" class="btn btn-white register">Register</a>
+        </div>
       </div>
     </header>
     <main class="main">
       <div class="main__content">
-        <h1 class="main__header margin-bottom">
-          Make <br />
-          remote work
-        </h1>
-        <p class="main__p margin-bottom">
-          Get your team in sync, no matter your location. Streamline processes,
-          create team rituals, and watch productivity soar.
-        </p>
-        <div class="main__btn">
-          <a href="#" class="btn btn-black">Learn more</a>
+        <div class="main__text">
+          <h1 class="main__header margin-bottom">
+            Make <br />
+            remote work
+          </h1>
+          <p class="main__p margin-bottom">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <div class="main__btn">
+            <a href="#" class="btn btn-black">Learn more</a>
+          </div>
         </div>
         <div class="main__icon">
           <div class="icon">
@@ -116,6 +126,7 @@
       </div>
       <div class="main__img"></div>
     </main>
+    <div class="overlay"></div>
     <!-- Features Company Careers About Login Register   Learn more -->
 
     <div class="attribution" style="display: none">

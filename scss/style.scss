@@ -20,6 +20,18 @@ html {
   font-size: 62.5%;
   font-family: "Epilogue", sans-serif;
 }
+@mixin respond($breakpoint) {
+  @if ($breakpoint == tab-port) {
+    @media screen and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == phone) {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+  }
+}
 /*
 ---------------------
 -------Reset----------
@@ -107,6 +119,9 @@ li {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 2rem;
+  &__toggle {
+    display: none;
+  }
   &__logo {
     display: flex;
     align-items: center;
@@ -114,9 +129,18 @@ li {
   .nav {
     margin-left: 2rem;
     display: flex;
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 100%;
+      flex-grow: 2;
+    }
     &__item {
       padding: 1rem;
       position: relative;
+    }
+    &__close {
+      display: none;
     }
     &__list {
       display: flex;
@@ -212,17 +236,24 @@ li {
   }
   &__content {
     flex: 0 1 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    // flex-direction: column;
+    grid-template-rows: 3fr 1fr;
     padding-inline: 5rem;
     gap: 4rem;
+  }
+  &__text {
+    display: grid;
+    align-self: center;
+    align-content: end;
+    min-height: 100%;
+    gap: 2rem;
   }
   &__header {
     font-weight: var(--fw-7);
     font-size: 8rem;
     color: var(--c-mid-black);
-    justify-self: flex-start;
+    align-self: end;
   }
   &__p {
     font-size: var(--f-18);
@@ -233,7 +264,107 @@ li {
     display: flex;
     gap: 3rem;
     margin-top: 2rem;
-    height: 10%;
     align-items: flex-end;
+    align-self: end;
+  }
+}
+/*
+---------------------------
+-------Mobile View----------
+----------------------------
+*/
+@include respond(tab-port) {
+  // Header
+  .header {
+    .nav {
+      flex-direction: column;
+      margin-left: 0;
+      align-self: flex-start;
+      &__container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--c-mid-white);
+        height: 110vh;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        min-width: 22vw;
+        transform: translateX(100%);
+        z-index: 2000;
+        transition: all 0.2s ease-in-out;
+        &.menu {
+          transform: translateX(0);
+        }
+      }
+
+      &__list {
+        margin-left: 0;
+      }
+      &__dropdown {
+        position: static;
+        top: 0;
+        box-shadow: none;
+        transform: translateY(0);
+        opacity: 0;
+        height: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      &__dropdown.show {
+        height: auto;
+        opacity: 1;
+      }
+      &__close {
+        display: inline-block;
+        width: 3rem;
+        align-self: end;
+        padding: 1rem;
+        img {
+          display: inline-block;
+        }
+      }
+    }
+    &__login {
+      flex-direction: column;
+      .register {
+        width: 60%;
+      }
+    }
+    &__toggle {
+      display: inline-block;
+      flex-grow: 2;
+      display: flex;
+      justify-content: flex-end;
+      img {
+        max-width: 4rem;
+      }
+    }
+  }
+  //Overlay
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+  .overlay.display {
+    display: block;
+  }
+}
+@include respond(phone) {
+  .header {
+    margin: 0 auto;
+  }
+  .main {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    &__img {
+      grid-row: 1/2;
+      // background-size: cover;
+    }
   }
 }
